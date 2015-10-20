@@ -15,6 +15,7 @@ class VX11 {
 
   private:
 
+    void endPacket();
     int calcChecksum();
 
     byte packet[22];
@@ -25,8 +26,6 @@ class VX11 {
     float speed = 0;
     int packetNumber = 0;
 
-    bool startReading = false,
-         invalidPacket = false,
-         doneReading = false;
+    bool startReading = false;
 
 };

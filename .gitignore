@@ -1,1 +1,3 @@
 .build_ano
+*.pyc
+*.swp

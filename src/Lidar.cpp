@@ -1,3 +1,4 @@
+
 #include "Lidar.h"
 
 void VX11::read(){
@@ -44,8 +45,11 @@ void VX11::endPacket(){
         case 16:
           //distance 0
           distanceIndex = (newPacketNumber - 0xA0) * 4 + i/4 - 1;
+              Serial.print(distanceIndex);
+              Serial.print(",");
           if (distanceIndex >= 0 && distanceIndex < 360){
             if ((packet[i+1] & 0x80) >> 7){
+              Serial.println("failure");
               distances[distanceIndex] = 0;
             }
             else {
@@ -58,8 +62,6 @@ void VX11::endPacket(){
 
               // finally store valid data
               distances[distanceIndex] = d;
-              Serial.print(distanceIndex);
-              Serial.print(",");
               Serial.println(d);
             }
           }

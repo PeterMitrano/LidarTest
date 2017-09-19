@@ -23,7 +23,7 @@ def convert_to_points(canvas, s, a, b, scale = 1, polar=True):
     canvas.create_rectangle(s/2+x,s/2-y,s/2+x+1,s/2-y+1)
     i += 1
 
-ser = serial.Serial('/dev/ttyUSB0', 115200)
+ser = serial.Serial('/dev/ttyUSB1', 115200)
 
 
 if __name__ == "__main__":

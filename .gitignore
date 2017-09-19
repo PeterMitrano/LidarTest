@@ -1,3 +1,5 @@
 .build_ano
 *.pyc
 *.swp
+.pioenvs
+.piolibdeps
